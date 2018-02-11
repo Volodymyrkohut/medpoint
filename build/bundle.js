@@ -47026,6 +47026,7 @@
 	            var _this = this;
 
 	            var result = "";
+	            var flag = false;
 
 	            this.props.answer.map(function (item) {
 	                if (item.question == "Размер опухоли") {
@@ -47063,17 +47064,20 @@
 
 	            this.props.answer.map(function (item) {
 
-	                if (item.question == 'Имеете ли Вы доступ к фрагменту опухолевой ткани ?') {
+	                if (item.question == 'У вас выявлена гематологическое опухоль ?') {
 	                    if (item.answer == "Нет") {
-	                        _this.setState({ resultText: _react2['default'].createElement(_resultsOneJsx2['default'], null) });
-	                    } else {
-	                        _this.setState({ resultText: _react2['default'].createElement(_resultsOneHemeJsx2['default'], null) });
+	                        flag = true;
 	                    }
 	                }
+
+	                if (flag === true && item.question == 'Имеете ли Вы доступ к фрагменту опухолевой ткани ?') {
+	                    _this.setState({ resultText: _react2['default'].createElement(_resultsOneJsx2['default'], null) });
+	                } else {
+	                    _this.setState({ resultText: _react2['default'].createElement(_resultsOneHemeJsx2['default'], null) });
+	                }
+
 	                if (item.question == 'Вы проходили хирургическую биопсию ?') {
-	                    if (item.answer == "Нет") {
-	                        _this.setState({ resultText: _react2['default'].createElement(_resultsActJsx2['default'], null) });
-	                    }
+	                    _this.setState({ resultText: _react2['default'].createElement(_resultsActJsx2['default'], null) });
 	                }
 
 	                // console.log("item", item.question);
