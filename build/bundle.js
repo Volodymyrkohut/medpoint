@@ -45190,7 +45190,7 @@
 	    question: 'По какой причине небыла проведенена хирургиская биопсия ?',
 	    lotOf: [{
 	        id: 1,
-	        item: "по причине состояния здоровья"
+	        item: "По причине состояния здоровья"
 	    }, {
 	        id: 2,
 	        item: "пухоль расположена в недоступном месте, и поэтому невозможно сделать биопсию."
@@ -47079,7 +47079,7 @@
 	                    _this.setState({ resultText: _react2['default'].createElement(_resultsOneHemeJsx2['default'], null), diagnos: 'One Heme' });
 	                }
 
-	                if (item.question == 'Вы проходили хирургическую биопсию ?') {
+	                if (item.question == 'По какой причине небыла проведенена хирургиская биопсия ?') {
 	                    _this.setState({ resultText: _react2['default'].createElement(_resultsActJsx2['default'], null), diagnos: 'Act' });
 	                }
 
@@ -48028,11 +48028,6 @@
 	                        _reactCollapsible2["default"],
 	                        { trigger: "Цель Анализа" },
 	                        _react2["default"].createElement(
-	                            "h1",
-	                            null,
-	                            "One Heme –анализ для полной геномной диагностики гематологических раковых заболеваний : Лейкемия/ Лимфома Миелома/ Саркома."
-	                        ),
-	                        _react2["default"].createElement(
 	                            "ul",
 	                            { className: "accordion-pen" },
 	                            _react2["default"].createElement(
@@ -48049,7 +48044,7 @@
 	                                    _react2["default"].createElement(
 	                                        "p",
 	                                        null,
-	                                        "Методы лечения, подобранные в соответствии с геномным профилем опухоли, могут оказаться более эффективными и менее токсичными. "
+	                                        "One Heme –анализ для полной геномной диагностики раковых заболеваний : Лейкемия/ Лимфома Миелома/ Саркома."
 	                                    )
 	                                )
 	                            ),
@@ -48067,7 +48062,7 @@
 	                                    _react2["default"].createElement(
 	                                        "p",
 	                                        null,
-	                                        " Тестирование предоставляет врачу существенную клиническую информацию для оценки риска и прогноза. "
+	                                        " Подобранные методы лечения, могут бить более эффективными."
 	                                    )
 	                                )
 	                            ),
@@ -48085,7 +48080,7 @@
 	                                    _react2["default"].createElement(
 	                                        "p",
 	                                        null,
-	                                        " One Heme –анализ для полной геномной диагностики гематологических раковых заболеваний : Лейкемия/ Лимфома Миелома/ Саркома. "
+	                                        " Тестирование предоставит врачу клиническую информацию для оценки риска и прогноза. "
 	                                    )
 	                                )
 	                            )
@@ -48108,7 +48103,7 @@
 	                                _react2["default"].createElement(
 	                                    "div",
 	                                    { className: "description-d" },
-	                                    "Ответы в отчете представлены в понятном и легком для понимания виде, и они включают большую часть информации, необходимой врачу для того, чтобы определить наиболее подходящее для Вас лечение. "
+	                                    "Ответы в отчете представлены в понятном и легком для понимания виде"
 	                                )
 	                            ),
 	                            _react2["default"].createElement(
@@ -48124,19 +48119,28 @@
 	                                    { className: "description-d" },
 	                                    "В  отчет включается статус TMB (параметр мутационной нагрузки опухоли) и MSI (микросателлитная нестабильность), которые указывают на вероятность положительного ответа на иммунотерапию."
 	                                )
-	                            ),
+	                            )
+	                        ),
+	                        _react2["default"].createElement("br", null)
+	                    ),
+	                    _react2["default"].createElement(
+	                        _reactCollapsible2["default"],
+	                        { trigger: "Процесс тестирования" },
+	                        _react2["default"].createElement(
+	                            "ul",
+	                            { className: "accordion-pen" },
 	                            _react2["default"].createElement(
 	                                "li",
 	                                null,
 	                                _react2["default"].createElement(
 	                                    "div",
 	                                    { className: "number-icon" },
-	                                    "3"
+	                                    "1"
 	                                ),
 	                                _react2["default"].createElement(
 	                                    "div",
 	                                    { className: "description-d" },
-	                                    "Таблица, приводимая на первой странице отчета, представляет собой сводку полученных данных. "
+	                                    "В течение 14-ти дней после получения образца лабораторией ."
 	                                )
 	                            ),
 	                            _react2["default"].createElement(
@@ -48145,7 +48149,7 @@
 	                                _react2["default"].createElement(
 	                                    "div",
 	                                    { className: "number-icon" },
-	                                    "4"
+	                                    "2"
 	                                ),
 	                                _react2["default"].createElement(
 	                                    "div",
@@ -48157,8 +48161,7 @@
 	                                    _react2["default"].createElement("img", { width: "161", src: "images/forResult/6.png" })
 	                                )
 	                            )
-	                        ),
-	                        _react2["default"].createElement("br", null)
+	                        )
 	                    ),
 	                    _react2["default"].createElement(
 	                        _reactCollapsible2["default"],
@@ -48308,7 +48311,7 @@
 	                                        _react2["default"].createElement(
 	                                            "p",
 	                                            null,
-	                                            " One – анализ  всеобъемлющей геномной диагностики опухолевой ткани, с помощью которого врач сможет подобрать таргетное лечения для конкретной опухоли    "
+	                                            " One – анализ геномной диагностики опухолевой ткани, для подбора таргетное лечения конкретной опухоли"
 	                                        )
 	                                    )
 	                                ),
@@ -48326,7 +48329,7 @@
 	                                        _react2["default"].createElement(
 	                                            "p",
 	                                            null,
-	                                            "позволяет параллельно выявлять сотни генов и все геномные мутации, которые могут вызывать развитие рака, в отличие от геномных анализов первого поколения  "
+	                                            "Выявляет сотни генов и все геномные мутации"
 	                                        )
 	                                    )
 	                                ),
@@ -48344,7 +48347,7 @@
 	                                        _react2["default"].createElement(
 	                                            "p",
 	                                            null,
-	                                            " Методы лечения, подобранные в соответствии с геномным профилем опухоли, могут оказаться более эффективными и менее токсичными.  "
+	                                            " Подобранные методы лечения, могут бить более эффективными.  "
 	                                        )
 	                                    )
 	                                )
@@ -48369,7 +48372,7 @@
 	                                _react2["default"].createElement(
 	                                    "div",
 	                                    { className: "description-d" },
-	                                    "Ответы в отчете представлены в понятном и легком для понимания виде, и они включают большую часть информации, необходимой врачу для того, чтобы определить наиболее подходящее для Вас лечение.  "
+	                                    "Ответы в отчете представлены в понятном и легком для понимания виде"
 	                                )
 	                            ),
 	                            _react2["default"].createElement(
@@ -48385,27 +48388,13 @@
 	                                    { className: "description-d" },
 	                                    "В  отчет включается статус TMB (параметр мутационной нагрузки опухоли) и MSI (микросателлитная нестабильность), которые указывают на вероятность положительного ответа на иммунотерапию."
 	                                )
-	                            ),
-	                            _react2["default"].createElement(
-	                                "li",
-	                                null,
-	                                _react2["default"].createElement(
-	                                    "div",
-	                                    { className: "number-icon" },
-	                                    "3"
-	                                ),
-	                                _react2["default"].createElement(
-	                                    "div",
-	                                    { className: "description-d" },
-	                                    "Таблица, приводимая на первой странице отчета, представляет собой сводку полученных данных. "
-	                                )
 	                            )
 	                        ),
 	                        _react2["default"].createElement("br", null)
 	                    ),
 	                    _react2["default"].createElement(
 	                        _reactCollapsible2["default"],
-	                        { trigger: "Процесс тестирования " },
+	                        { trigger: "Процесс тестирования" },
 	                        _react2["default"].createElement(
 	                            "ul",
 	                            { className: "accordion-pen" },
@@ -48420,7 +48409,7 @@
 	                                _react2["default"].createElement(
 	                                    "div",
 	                                    { className: "description-d" },
-	                                    "В течение 14-ти дней после получения образца лабораторией . Результаты тестирования будут включать подробную информацию о геномном составе опухоли и вариантах лечения, которые, возможно, подходят к геномному профилю опухоли."
+	                                    "В течение 14-ти дней после получения образца лабораторией ."
 	                                )
 	                            ),
 	                            _react2["default"].createElement(
@@ -48434,7 +48423,11 @@
 	                                _react2["default"].createElement(
 	                                    "div",
 	                                    { className: "description-d" },
-	                                    _react2["default"].createElement("img", { width: "200", src: "images/image.png" })
+	                                    _react2["default"].createElement("img", { width: "161", src: "images/forResult/1.png" }),
+	                                    _react2["default"].createElement("img", { width: "161", src: "images/forResult/3.png" }),
+	                                    _react2["default"].createElement("img", { width: "161", src: "images/forResult/4.png" }),
+	                                    _react2["default"].createElement("img", { width: "161", src: "images/forResult/5.png" }),
+	                                    _react2["default"].createElement("img", { width: "161", src: "images/forResult/6.png" })
 	                                )
 	                            )
 	                        )
@@ -48551,7 +48544,7 @@
 	                                        _react2["default"].createElement(
 	                                            "p",
 	                                            null,
-	                                            ".Анализ способствует в подборе самых новых таргетных методов лечения в соответствии с геномным профилем опухоли."
+	                                            "Анализ способствует в подборе самых новых таргетных методов лечения в соответствии с геномным профилем опухоли."
 	                                        )
 	                                    )
 	                                ),
