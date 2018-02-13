@@ -66,7 +66,7 @@
 
 	var _componentsCategorySmarttestSmartTestResultJsx2 = _interopRequireDefault(_componentsCategorySmarttestSmartTestResultJsx);
 
-	var _reducers = __webpack_require__(529);
+	var _reducers = __webpack_require__(530);
 
 	var _reducers2 = _interopRequireDefault(_reducers);
 
@@ -74,11 +74,11 @@
 
 	var _redux = __webpack_require__(413);
 
-	var _reduxThunk = __webpack_require__(536);
+	var _reduxThunk = __webpack_require__(537);
 
 	var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-	var _reduxDevtoolsExtension = __webpack_require__(537);
+	var _reduxDevtoolsExtension = __webpack_require__(538);
 
 	var store = (0, _redux.createStore)(_reducers2['default'], (0, _reduxDevtoolsExtension.composeWithDevTools)((0, _redux.applyMiddleware)(_reduxThunk2['default'])));
 
@@ -39619,21 +39619,31 @@
 	    answers: [{
 	        next: 7,
 	        text: "Да",
-	        answerForView: 'Проходил хирургическую биопсию (АКТ )'
+	        answerForView: 'Проходил хирургическую биопсию'
 	    }, {
 	        next: 10,
 	        text: "Нет",
-	        answerForView: 'Не проходил хирургическую биопсию (АКТ )'
+	        answerForView: 'Не проходил хирургическую биопсию'
 	    }]
 	}, {
 	    key: 10,
-	    question: 'По какой причине небыла проведенена хирургиская биопсия ?',
+	    question: 'По какой причине не была проведена хирургиская биопсия ?',
 	    lotOf: [{
 	        id: 1,
 	        item: "По причине состояния здоровья"
 	    }, {
 	        id: 2,
-	        item: "пухоль расположена в недоступном месте, и поэтому невозможно сделать биопсию."
+	        item: _react2["default"].createElement(
+	            "p",
+	            null,
+	            "Опухоль расположена в недоступном месте, и поэтому ",
+	            _react2["default"].createElement(
+	                "span",
+	                { style: { fontSize: '20px' } },
+	                "невозможно"
+	            ),
+	            " сделать биопсию.\""
+	        )
 	    }],
 	    answers: [{
 	        next: null,
@@ -39654,7 +39664,7 @@
 	        item: "Редкая опухоль, возможности лечения которой ограничены."
 	    }, {
 	        id: 3,
-	        item: "Опухоль, что затрудняет выбор лечения"
+	        item: "Oпухоль неизвестного происхождения , что затрудняет выбор лечения. "
 	    }, {
 	        id: 4,
 	        item: "Пациенты с солидной опухолью, которые исчерпали все варианты стандартного лечения"
@@ -39942,7 +39952,7 @@
 	                            _react2["default"].createElement(
 	                                "td",
 	                                null,
-	                                "Treatment"
+	                                "Genomic Prifile"
 	                            )
 	                        ),
 	                        _react2["default"].createElement(
@@ -46233,7 +46243,7 @@
 
 	__webpack_require__(522);
 
-	var _reactCollapsible = __webpack_require__(525);
+	var _reactCollapsible = __webpack_require__(526);
 
 	var _reactCollapsible2 = _interopRequireDefault(_reactCollapsible);
 
@@ -46245,15 +46255,15 @@
 
 	var Scroll = _interopRequireWildcard(_reactScroll);
 
-	var _resultsOneHemeJsx = __webpack_require__(526);
+	var _resultsOneHemeJsx = __webpack_require__(527);
 
 	var _resultsOneHemeJsx2 = _interopRequireDefault(_resultsOneHemeJsx);
 
-	var _resultsOneJsx = __webpack_require__(527);
+	var _resultsOneJsx = __webpack_require__(528);
 
 	var _resultsOneJsx2 = _interopRequireDefault(_resultsOneJsx);
 
-	var _resultsActJsx = __webpack_require__(528);
+	var _resultsActJsx = __webpack_require__(529);
 
 	var _resultsActJsx2 = _interopRequireDefault(_resultsActJsx);
 
@@ -46332,13 +46342,43 @@
 	                }
 
 	                if (flag === true && item.question == 'Имеете ли Вы доступ к фрагменту опухолевой ткани ?') {
-	                    _this.setState({ resultText: _react2['default'].createElement(_resultsOneJsx2['default'], null), diagnos: 'FoundationOne' });
+	                    _this.setState({ resultText: _react2['default'].createElement(_resultsOneJsx2['default'], null), diagnos: _react2['default'].createElement(
+	                            'div',
+	                            null,
+	                            'FOUNDATION',
+	                            _react2['default'].createElement(
+	                                'b',
+	                                null,
+	                                'ONE'
+	                            ),
+	                            '®'
+	                        ) });
 	                } else {
-	                    _this.setState({ resultText: _react2['default'].createElement(_resultsOneHemeJsx2['default'], null), diagnos: 'FoundationOne Heme' });
+	                    _this.setState({ resultText: _react2['default'].createElement(_resultsOneHemeJsx2['default'], null), diagnos: _react2['default'].createElement(
+	                            'div',
+	                            null,
+	                            'FOUNDATION',
+	                            _react2['default'].createElement(
+	                                'b',
+	                                null,
+	                                'ONE'
+	                            ),
+	                            '®HEME'
+	                        ) });
 	                }
 
 	                if (item.question == 'По какой причине небыла проведенена хирургиская биопсия ?') {
-	                    _this.setState({ resultText: _react2['default'].createElement(_resultsActJsx2['default'], null), diagnos: 'FoundationACT' });
+	                    _this.setState({ resultText: _react2['default'].createElement(_resultsActJsx2['default'], null), diagnos: _react2['default'].createElement(
+	                            'div',
+	                            null,
+	                            'FOUNDATION',
+	                            _react2['default'].createElement(
+	                                'b',
+	                                null,
+	                                'ACT'
+	                            ),
+	                            '®HEME'
+	                        ) });
 	                }
 	            });
 	        }
@@ -46412,7 +46452,9 @@
 	                                        'h4',
 	                                        { className: 'you-result-title' },
 	                                        'Вам подходит:'
-	                                    )
+	                                    ),
+	                                    _react2['default'].createElement('i', { className: 'baner' }),
+	                                    _react2['default'].createElement('i', { className: 'baner2' })
 	                                ),
 	                                _react2['default'].createElement(
 	                                    'ul',
@@ -46466,7 +46508,7 @@
 	                                    _react2['default'].createElement(
 	                                        'h3',
 	                                        { className: 'know-more' },
-	                                        'Для бесплатной консультация и более развернутой информации.'
+	                                        'Для связи и  консультации по онкогенетике и персонализированной медицины :'
 	                                    ),
 	                                    _react2['default'].createElement(
 	                                        'div',
@@ -46476,7 +46518,7 @@
 	                                            { className: 'row' },
 	                                            _react2['default'].createElement(
 	                                                'label',
-	                                                { 'for': 'name' },
+	                                                { htmlFor: 'name' },
 	                                                'Имя'
 	                                            ),
 	                                            _react2['default'].createElement('input', { type: 'text', id: 'name' })
@@ -46486,7 +46528,7 @@
 	                                            { className: 'row' },
 	                                            _react2['default'].createElement(
 	                                                'label',
-	                                                { 'for': 'phone' },
+	                                                { htmlFor: 'phone' },
 	                                                'Телефон'
 	                                            ),
 	                                            _react2['default'].createElement('input', { type: 'text', id: 'phone' })
@@ -46496,7 +46538,7 @@
 	                                            { className: 'row' },
 	                                            _react2['default'].createElement(
 	                                                'label',
-	                                                { 'for': 'country' },
+	                                                { htmlFor: 'country' },
 	                                                'Страна проживания'
 	                                            ),
 	                                            _react2['default'].createElement('input', { type: 'text', id: 'country' })
@@ -46506,7 +46548,7 @@
 	                                            { className: 'row' },
 	                                            _react2['default'].createElement(
 	                                                'label',
-	                                                { 'for': 'mail' },
+	                                                { htmlFor: 'mail' },
 	                                                'e-mail'
 	                                            ),
 	                                            _react2['default'].createElement('input', { type: 'text', id: 'mail' })
@@ -46591,7 +46633,7 @@
 	*
 	* */
 	module.exports = exports['default'];
-	/*<h1 className="resulttest">You result: {this.state.result}</h1>*/ /*<div className="your-result">{this.state.result}</div>*/
+	/*<h1 className="resulttest">You result: {this.state.result}</h1>*/ /*<div className="your-result">{this.state.result}</div>*/ /*Для бесплатной консультация и более развернутой информации.*/
 
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/volodymyr/Desktop/medpoint-dev/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "SmartTestResult.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
@@ -46630,7 +46672,7 @@
 
 
 	// module
-	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n.wrapperResult {\n  height: 100%; }\n\n.smarttestresult {\n  height: 100%; }\n  .smarttestresult .smart-result-page {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -moz-flex;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: space-bettwen;\n    -ms-flex-pack: space-bettwen;\n    -webkit-justify-content: space-bettwen;\n    -moz-justify-content: space-bettwen;\n    justify-content: space-bettwen;\n    -webkit-flex-wrap: wrap;\n    -moz-flex-wrap: wrap;\n    -ms-flex-wrap: wrap;\n    flex-wrap: wrap;\n    width: 100%;\n    min-height: 100%; }\n    .smarttestresult .smart-result-page .left-side-result-page {\n      background-color: #e5e5e5;\n      padding: 30px;\n      text-align: left;\n      flex: 0 0 25%; }\n      @media (max-width: 768px) {\n        .smarttestresult .smart-result-page .left-side-result-page {\n          display: none; } }\n    .smarttestresult .smart-result-page .right-side-result-page {\n      display: -webkit-box;\n      display: -webkit-flex;\n      display: -moz-flex;\n      display: -ms-flexbox;\n      display: flex;\n      flex-direction: column;\n      -webkit-box-pack: space-bettwen;\n      -ms-flex-pack: space-bettwen;\n      -webkit-justify-content: space-bettwen;\n      -moz-justify-content: space-bettwen;\n      justify-content: space-bettwen;\n      flex: 0 0 75%;\n      position: relative; }\n      @media (max-width: 768px) {\n        .smarttestresult .smart-result-page .right-side-result-page {\n          flex: 0 0 100%; } }\n      .smarttestresult .smart-result-page .right-side-result-page .go-top {\n        position: fixed;\n        cursor: pointer;\n        bottom: 10%;\n        right: 3%;\n        width: 36px;\n        height: 36px;\n        border-radius: 50%;\n        background-color: #43afb3;\n        padding: 5px; }\n        .smarttestresult .smart-result-page .right-side-result-page .go-top:before {\n          content: \"\";\n          position: absolute;\n          top: 45%;\n          transition: 1s all;\n          left: 50%;\n          background: transparent;\n          width: 10px;\n          height: 10px;\n          border: solid #ffffff;\n          border-width: 0 3px 3px 0;\n          display: inline-block;\n          padding: 2px;\n          transform: translate(-50%, -50%) rotate(45deg);\n          z-index: 3;\n          transition: all .3s; }\n      .smarttestresult .smart-result-page .right-side-result-page .go-bottom {\n        position: fixed;\n        cursor: pointer;\n        bottom: 10%;\n        right: 3%;\n        width: 36px;\n        height: 36px;\n        border-radius: 50%;\n        background-color: #43afb3; }\n        .smarttestresult .smart-result-page .right-side-result-page .go-bottom:before {\n          content: \"\";\n          position: absolute;\n          top: 55%;\n          transition: 1s all;\n          left: 50%;\n          background: transparent;\n          width: 10px;\n          height: 10px;\n          border: solid #ffffff;\n          border-width: 0 3px 3px 0;\n          display: inline-block;\n          padding: 2px;\n          transform: translate(-50%, -50%) rotate(225deg);\n          z-index: 3;\n          transition: all .3s; }\n      .smarttestresult .smart-result-page .right-side-result-page .answers {\n        background-color: #43afb3;\n        padding: 20px 20px; }\n        @media (max-width: 768px) {\n          .smarttestresult .smart-result-page .right-side-result-page .answers {\n            padding-left: 20px;\n            padding-right: 0px; } }\n        .smarttestresult .smart-result-page .right-side-result-page .answers .image-and-title {\n          display: -webkit-box;\n          display: -webkit-flex;\n          display: -moz-flex;\n          display: -ms-flexbox;\n          display: flex;\n          -webkit-box-pack: start;\n          -ms-flex-pack: start;\n          -webkit-justify-content: flex-start;\n          -moz-justify-content: flex-start;\n          justify-content: flex-start;\n          margin-bottom: 20px; }\n          .smarttestresult .smart-result-page .right-side-result-page .answers .image-and-title .you-result-title {\n            color: #ffffff;\n            font-size: 24px;\n            font-weight: 700; }\n          .smarttestresult .smart-result-page .right-side-result-page .answers .image-and-title i {\n            margin-right: 20px;\n            fill: #464646; }\n        .smarttestresult .smart-result-page .right-side-result-page .answers ul {\n          color: #ffffff;\n          margin-left: 50px;\n          column-count: 3;\n          column-gap: 50px; }\n          @media (max-width: 768px) {\n            .smarttestresult .smart-result-page .right-side-result-page .answers ul {\n              column-count: 1; } }\n          .smarttestresult .smart-result-page .right-side-result-page .answers ul li {\n            list-style: none;\n            margin-bottom: 10px; }\n            .smarttestresult .smart-result-page .right-side-result-page .answers ul li:before {\n              content: \"\";\n              display: inline-block;\n              width: 16px;\n              height: 16px;\n              background-image: url(" + __webpack_require__(524) + ");\n              margin-left: -25px;\n              margin-right: 10px;\n              margin-bottom: -3px; }\n              @media (max-width: 768px) {\n                .smarttestresult .smart-result-page .right-side-result-page .answers ul li:before {\n                  font-size: 14px; } }\n      .smarttestresult .smart-result-page .right-side-result-page .your-result {\n        font-size: 16px;\n        font-weight: 600;\n        color: #43afb3; }\n      .smarttestresult .smart-result-page .right-side-result-page .result {\n        padding: 30px 20px; }\n        .smarttestresult .smart-result-page .right-side-result-page .result .accordion-result {\n          display: flex;\n          justify-content: flex-start; }\n          .smarttestresult .smart-result-page .right-side-result-page .result .accordion-result .result-top {\n            margin-left: 20px;\n            padding-right: 20px;\n            /* here */ }\n            .smarttestresult .smart-result-page .right-side-result-page .result .accordion-result .result-top h1 {\n              max-width: 283px;\n              font-size: 16px;\n              font-weight: 600;\n              color: black;\n              margin-bottom: 29px; }\n            .smarttestresult .smart-result-page .right-side-result-page .result .accordion-result .result-top .green-text {\n              font-size: 12px;\n              margin-bottom: 20px;\n              color: #43afb3; }\n            .smarttestresult .smart-result-page .right-side-result-page .result .accordion-result .result-top .Collapsible__trigger {\n              display: block;\n              cursor: pointer;\n              font-weight: 400;\n              text-decoration: none;\n              color: gray;\n              position: relative;\n              border: 1px solid white;\n              padding: 10px;\n              color: #464646;\n              border-bottom: 1px solid #43afb3;\n              margin-bottom: 20px; }\n              .smarttestresult .smart-result-page .right-side-result-page .result .accordion-result .result-top .Collapsible__trigger:after {\n                content: \"\";\n                display: inline-block;\n                margin-left: 10px;\n                border: solid #43afb3;\n                border-width: 0 2px 2px 0;\n                display: inline-block;\n                padding: 3px;\n                transform: rotate(45deg);\n                transition: transform 300ms; }\n              .smarttestresult .smart-result-page .right-side-result-page .result .accordion-result .result-top .Collapsible__trigger.is-open:after {\n                transform: rotateZ(225deg); }\n            .smarttestresult .smart-result-page .right-side-result-page .result .accordion-result .result-top .accordion-pen li {\n              display: -webkit-box;\n              display: -webkit-flex;\n              display: -moz-flex;\n              display: -ms-flexbox;\n              display: flex;\n              -webkit-box-pack: start;\n              -ms-flex-pack: start;\n              -webkit-justify-content: flex-start;\n              -moz-justify-content: flex-start;\n              justify-content: flex-start;\n              align-items: center;\n              margin-bottom: 10px; }\n              .smarttestresult .smart-result-page .right-side-result-page .result .accordion-result .result-top .accordion-pen li .number-icon {\n                margin-right: 10px;\n                padding-top: 5px;\n                text-align: center;\n                width: 30px;\n                height: 30px;\n                border-radius: 50%;\n                border: 1px solid #43afb3;\n                align-self: self-start; }\n              .smarttestresult .smart-result-page .right-side-result-page .result .accordion-result .result-top .accordion-pen li .description-d {\n                flex: 1 1 70%;\n                color: #464646;\n                font-weight: 400; }\n                .smarttestresult .smart-result-page .right-side-result-page .result .accordion-result .result-top .accordion-pen li .description-d img {\n                  display: block;\n                  min-width: 50%; }\n            .smarttestresult .smart-result-page .right-side-result-page .result .accordion-result .result-top .export-to-pdf {\n              cursor: pointer;\n              text-decoration: none;\n              padding: 8px 35px;\n              color: #43afb3;\n              border: 1px solid #43afb3;\n              border-radius: 20px;\n              line-height: 3; }\n      .smarttestresult .smart-result-page .right-side-result-page .result-bottom {\n        display: -webkit-box;\n        display: -webkit-flex;\n        display: -moz-flex;\n        display: -ms-flexbox;\n        display: flex;\n        justify-content: flex-start;\n        padding: 20px; }\n        .smarttestresult .smart-result-page .right-side-result-page .result-bottom .ask-after-result {\n          margin-left: 20px;\n          margin-bottom: 50px; }\n          .smarttestresult .smart-result-page .right-side-result-page .result-bottom .ask-after-result .form {\n            display: -webkit-box;\n            display: -webkit-flex;\n            display: -moz-flex;\n            display: -ms-flexbox;\n            display: flex;\n            -webkit-box-direction: normal;\n            -webkit-box-orient: vertical;\n            -webkit-flex-direction: column;\n            -moz-flex-direction: column;\n            -ms-flex-direction: column;\n            flex-direction: column; }\n            .smarttestresult .smart-result-page .right-side-result-page .result-bottom .ask-after-result .form .row {\n              display: -webkit-box;\n              display: -webkit-flex;\n              display: -moz-flex;\n              display: -ms-flexbox;\n              display: flex;\n              -webkit-box-direction: normal;\n              -webkit-box-orient: vertical;\n              -webkit-flex-direction: column;\n              -moz-flex-direction: column;\n              -ms-flex-direction: column;\n              flex-direction: column;\n              margin-bottom: 10px; }\n              .smarttestresult .smart-result-page .right-side-result-page .result-bottom .ask-after-result .form .row label {\n                color: #464646;\n                font-size: 16px;\n                font-weight: 400; }\n              .smarttestresult .smart-result-page .right-side-result-page .result-bottom .ask-after-result .form .row input {\n                height: 30px;\n                padding: 5px;\n                border-radius: 3px;\n                -moz-appearance: none;\n                -webkit-appearance: none;\n                border: 1px solid #43afb3; }\n                .smarttestresult .smart-result-page .right-side-result-page .result-bottom .ask-after-result .form .row input:focus {\n                  outline: 1px solid #50FBFF; }\n          .smarttestresult .smart-result-page .right-side-result-page .result-bottom .ask-after-result .know-more {\n            max-width: 283px;\n            font-size: 16px;\n            font-weight: 600;\n            color: #696969;\n            margin-bottom: 29px; }\n          .smarttestresult .smart-result-page .right-side-result-page .result-bottom .ask-after-result .know-more-button {\n            cursor: pointer;\n            text-decoration: none;\n            padding: 8px 35px;\n            color: #ffffff;\n            background-color: #43afb3;\n            border-radius: 20px;\n            line-height: 3; }\n", ""]);
+	exports.push([module.id, ".test {\n  -moz-transform: skew(25deg, 10deg);\n  -o-transform: skew(25deg, 10deg);\n  -ms-transform: skew(25deg, 10deg);\n  -webkit-transform: skew(25deg, 10deg);\n  transform: skew(25deg, 10deg);\n  moz-transform-origin: top left;\n  -o-transform-origin: top left;\n  -ms-transform-origin: top left;\n  -webkit-transform-origin: top left;\n  transform-origin: top left;\n  position: absolute;\n  top: 25%;\n  bottom: 25%;\n  left: 25%;\n  right: 25%;\n  background-color: rgba(20, 20, 20, 0.5); }\n\n.wrapperResult {\n  height: 100%; }\n\n.smarttestresult {\n  height: 100%; }\n  .smarttestresult .smart-result-page {\n    display: -webkit-box;\n    display: -webkit-flex;\n    display: -moz-flex;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: justify;\n    -ms-flex-pack: justify;\n    -webkit-justify-content: space-between;\n    -moz-justify-content: space-between;\n    justify-content: space-between;\n    -webkit-flex-wrap: wrap;\n    -moz-flex-wrap: wrap;\n    -ms-flex-wrap: wrap;\n    flex-wrap: wrap;\n    width: 100%;\n    min-height: 100%; }\n    .smarttestresult .smart-result-page .left-side-result-page {\n      background-color: #e5e5e5;\n      padding: 30px;\n      text-align: left;\n      flex: 0 0 25%; }\n      @media (max-width: 768px) {\n        .smarttestresult .smart-result-page .left-side-result-page {\n          display: none; } }\n    .smarttestresult .smart-result-page .right-side-result-page {\n      display: -webkit-box;\n      display: -webkit-flex;\n      display: -moz-flex;\n      display: -ms-flexbox;\n      display: flex;\n      flex-direction: column;\n      -webkit-box-pack: space-bettwen;\n      -ms-flex-pack: space-bettwen;\n      -webkit-justify-content: space-bettwen;\n      -moz-justify-content: space-bettwen;\n      justify-content: space-bettwen;\n      flex: 0 0 75%;\n      position: relative; }\n      @media (max-width: 768px) {\n        .smarttestresult .smart-result-page .right-side-result-page {\n          flex: 0 0 100%; } }\n      .smarttestresult .smart-result-page .right-side-result-page .go-top {\n        position: fixed;\n        cursor: pointer;\n        bottom: 10%;\n        right: 3%;\n        width: 36px;\n        height: 36px;\n        border-radius: 50%;\n        background-color: #43afb3;\n        padding: 5px; }\n        .smarttestresult .smart-result-page .right-side-result-page .go-top:before {\n          content: \"\";\n          position: absolute;\n          top: 45%;\n          transition: 1s all;\n          left: 50%;\n          background: transparent;\n          width: 10px;\n          height: 10px;\n          border: solid #ffffff;\n          border-width: 0 3px 3px 0;\n          display: inline-block;\n          padding: 2px;\n          transform: translate(-50%, -50%) rotate(45deg);\n          z-index: 3;\n          transition: all .3s; }\n      .smarttestresult .smart-result-page .right-side-result-page .go-bottom {\n        position: fixed;\n        cursor: pointer;\n        bottom: 10%;\n        right: 3%;\n        width: 36px;\n        height: 36px;\n        border-radius: 50%;\n        background-color: #43afb3; }\n        .smarttestresult .smart-result-page .right-side-result-page .go-bottom:before {\n          content: \"\";\n          position: absolute;\n          top: 55%;\n          transition: 1s all;\n          left: 50%;\n          background: transparent;\n          width: 10px;\n          height: 10px;\n          border: solid #ffffff;\n          border-width: 0 3px 3px 0;\n          display: inline-block;\n          padding: 2px;\n          transform: translate(-50%, -50%) rotate(225deg);\n          z-index: 3;\n          transition: all .3s; }\n      .smarttestresult .smart-result-page .right-side-result-page .answers {\n        background-color: #43afb3;\n        padding: 20px 20px; }\n        @media (max-width: 768px) {\n          .smarttestresult .smart-result-page .right-side-result-page .answers {\n            padding-left: 20px;\n            padding-right: 0px; } }\n        .smarttestresult .smart-result-page .right-side-result-page .answers .image-and-title {\n          display: -webkit-box;\n          display: -webkit-flex;\n          display: -moz-flex;\n          display: -ms-flexbox;\n          display: flex;\n          -webkit-box-pack: start;\n          -ms-flex-pack: start;\n          -webkit-justify-content: flex-start;\n          -moz-justify-content: flex-start;\n          justify-content: flex-start;\n          position: relative;\n          margin-bottom: 20px; }\n          .smarttestresult .smart-result-page .right-side-result-page .answers .image-and-title .you-result-title {\n            color: #ffffff;\n            font-size: 24px;\n            font-weight: 700; }\n          .smarttestresult .smart-result-page .right-side-result-page .answers .image-and-title i {\n            margin-right: 20px;\n            fill: #464646; }\n          .smarttestresult .smart-result-page .right-side-result-page .answers .image-and-title .baner {\n            display: flex;\n            width: 150px;\n            height: 35px;\n            margin-left: 10px;\n            background-image: url(" + __webpack_require__(524) + "); }\n        .smarttestresult .smart-result-page .right-side-result-page .answers ul {\n          color: #ffffff;\n          margin-left: 50px;\n          column-count: 3;\n          column-gap: 50px; }\n          @media (max-width: 768px) {\n            .smarttestresult .smart-result-page .right-side-result-page .answers ul {\n              column-count: 1; } }\n          .smarttestresult .smart-result-page .right-side-result-page .answers ul li {\n            list-style: none;\n            margin-bottom: 10px; }\n            .smarttestresult .smart-result-page .right-side-result-page .answers ul li:before {\n              content: \"\";\n              display: inline-block;\n              width: 16px;\n              height: 16px;\n              background-image: url(" + __webpack_require__(525) + ");\n              margin-left: -25px;\n              margin-right: 10px;\n              margin-bottom: -3px; }\n              @media (max-width: 768px) {\n                .smarttestresult .smart-result-page .right-side-result-page .answers ul li:before {\n                  font-size: 14px; } }\n      .smarttestresult .smart-result-page .right-side-result-page .your-result {\n        font-size: 16px;\n        font-weight: 600;\n        color: #43afb3; }\n      .smarttestresult .smart-result-page .right-side-result-page .result {\n        padding: 30px 20px; }\n        .smarttestresult .smart-result-page .right-side-result-page .result .accordion-result {\n          display: flex;\n          justify-content: flex-start; }\n          .smarttestresult .smart-result-page .right-side-result-page .result .accordion-result .result-top {\n            margin-left: 20px;\n            padding-right: 20px;\n            /* here */ }\n            .smarttestresult .smart-result-page .right-side-result-page .result .accordion-result .result-top h1 {\n              max-width: 283px;\n              font-size: 16px;\n              font-weight: 600;\n              color: black;\n              margin-bottom: 29px; }\n            .smarttestresult .smart-result-page .right-side-result-page .result .accordion-result .result-top .green-text {\n              font-size: 12px;\n              margin-bottom: 20px;\n              color: #43afb3; }\n            .smarttestresult .smart-result-page .right-side-result-page .result .accordion-result .result-top .Collapsible__trigger {\n              display: block;\n              cursor: pointer;\n              font-weight: 400;\n              text-decoration: none;\n              color: gray;\n              position: relative;\n              border: 1px solid white;\n              padding: 10px;\n              color: #464646;\n              border-bottom: 1px solid #43afb3;\n              margin-bottom: 20px; }\n              .smarttestresult .smart-result-page .right-side-result-page .result .accordion-result .result-top .Collapsible__trigger:after {\n                content: \"\";\n                display: inline-block;\n                margin-left: 10px;\n                border: solid #43afb3;\n                border-width: 0 2px 2px 0;\n                display: inline-block;\n                padding: 3px;\n                transform: rotate(45deg);\n                transition: transform 300ms; }\n              .smarttestresult .smart-result-page .right-side-result-page .result .accordion-result .result-top .Collapsible__trigger.is-open:after {\n                transform: rotateZ(225deg); }\n            .smarttestresult .smart-result-page .right-side-result-page .result .accordion-result .result-top .accordion-pen li {\n              display: -webkit-box;\n              display: -webkit-flex;\n              display: -moz-flex;\n              display: -ms-flexbox;\n              display: flex;\n              -webkit-box-pack: start;\n              -ms-flex-pack: start;\n              -webkit-justify-content: flex-start;\n              -moz-justify-content: flex-start;\n              justify-content: flex-start;\n              align-items: center;\n              margin-bottom: 10px; }\n              .smarttestresult .smart-result-page .right-side-result-page .result .accordion-result .result-top .accordion-pen li .number-icon {\n                margin-right: 10px;\n                padding-top: 5px;\n                text-align: center;\n                width: 30px;\n                height: 30px;\n                border-radius: 50%;\n                border: 1px solid #43afb3;\n                align-self: self-start; }\n              .smarttestresult .smart-result-page .right-side-result-page .result .accordion-result .result-top .accordion-pen li .description-d {\n                flex: 1 1 70%;\n                color: #464646;\n                font-weight: 400; }\n                .smarttestresult .smart-result-page .right-side-result-page .result .accordion-result .result-top .accordion-pen li .description-d img {\n                  display: block;\n                  min-width: 50%; }\n            .smarttestresult .smart-result-page .right-side-result-page .result .accordion-result .result-top .export-to-pdf {\n              cursor: pointer;\n              text-decoration: none;\n              padding: 8px 35px;\n              color: #43afb3;\n              border: 1px solid #43afb3;\n              border-radius: 20px;\n              line-height: 3; }\n      .smarttestresult .smart-result-page .right-side-result-page .result-bottom {\n        display: -webkit-box;\n        display: -webkit-flex;\n        display: -moz-flex;\n        display: -ms-flexbox;\n        display: flex;\n        justify-content: flex-start;\n        padding: 20px; }\n        .smarttestresult .smart-result-page .right-side-result-page .result-bottom .ask-after-result {\n          margin-left: 20px;\n          margin-bottom: 50px; }\n          .smarttestresult .smart-result-page .right-side-result-page .result-bottom .ask-after-result .form {\n            display: -webkit-box;\n            display: -webkit-flex;\n            display: -moz-flex;\n            display: -ms-flexbox;\n            display: flex;\n            -webkit-box-direction: normal;\n            -webkit-box-orient: vertical;\n            -webkit-flex-direction: column;\n            -moz-flex-direction: column;\n            -ms-flex-direction: column;\n            flex-direction: column; }\n            .smarttestresult .smart-result-page .right-side-result-page .result-bottom .ask-after-result .form .row {\n              display: -webkit-box;\n              display: -webkit-flex;\n              display: -moz-flex;\n              display: -ms-flexbox;\n              display: flex;\n              -webkit-box-direction: normal;\n              -webkit-box-orient: vertical;\n              -webkit-flex-direction: column;\n              -moz-flex-direction: column;\n              -ms-flex-direction: column;\n              flex-direction: column;\n              margin-bottom: 10px; }\n              .smarttestresult .smart-result-page .right-side-result-page .result-bottom .ask-after-result .form .row label {\n                color: #464646;\n                font-size: 16px;\n                font-weight: 400; }\n              .smarttestresult .smart-result-page .right-side-result-page .result-bottom .ask-after-result .form .row input {\n                height: 30px;\n                padding: 5px;\n                border-radius: 3px;\n                -moz-appearance: none;\n                -webkit-appearance: none;\n                border: 1px solid #43afb3; }\n                .smarttestresult .smart-result-page .right-side-result-page .result-bottom .ask-after-result .form .row input:focus {\n                  outline: 1px solid #50FBFF; }\n          .smarttestresult .smart-result-page .right-side-result-page .result-bottom .ask-after-result .know-more {\n            max-width: 283px;\n            font-size: 16px;\n            font-weight: 600;\n            color: #696969;\n            margin-bottom: 29px; }\n          .smarttestresult .smart-result-page .right-side-result-page .result-bottom .ask-after-result .know-more-button {\n            cursor: pointer;\n            text-decoration: none;\n            padding: 8px 35px;\n            color: #ffffff;\n            background-color: #43afb3;\n            border-radius: 20px;\n            line-height: 3; }\n", ""]);
 
 	// exports
 
@@ -46639,10 +46681,16 @@
 /* 524 */
 /***/ (function(module, exports) {
 
-	module.exports = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiI+PGRlZnM+PHBhdGggaWQ9ImN6NTlhIiBkPSJNNjUxIDE4NXYtMTZoMTZ2MTZ6bTEtOGE3IDcgMCAxIDAgMTQgMCA3IDcgMCAwIDAtMTQgMHoiLz48cGF0aCBpZD0iY3o1OWIiIGQ9Ik02NTkgMTcwYTcgNyAwIDEgMSAwIDE0IDcgNyAwIDAgMSAwLTE0eiIvPjxwYXRoIGlkPSJjejU5ZCIgZD0iTTY2MS43NyAxNzRsLTMuNyAzLjYtMS44NC0xLjhMNjU1IDE3N2wzLjA4IDMgNC45Mi00Ljh6Ii8+PGNsaXBQYXRoIGlkPSJjejU5YyI+PHVzZSBmaWxsPSIjZmZmIiB4bGluazpocmVmPSIjY3o1OWEiLz48L2NsaXBQYXRoPjwvZGVmcz48Zz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNjUxIC0xNjkpIj48Zz48dXNlIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMCIgc3Ryb2tlPSIjNDY0NjQ2IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSI1MCIgc3Ryb2tlLXdpZHRoPSIyIiBjbGlwLXBhdGg9InVybCgmcXVvdDsjY3o1OWMmcXVvdDspIiB4bGluazpocmVmPSIjY3o1OWIiLz48L2c+PGc+PHVzZSB4bGluazpocmVmPSIjY3o1OWQiLz48dXNlIGZpbGw9IiM0NjQ2NDYiIHhsaW5rOmhyZWY9IiNjejU5ZCIvPjwvZz48L2c+PC9nPjwvc3ZnPg=="
+	module.exports = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDIwMDEwOTA0Ly9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9UUi8yMDAxL1JFQy1TVkctMjAwMTA5MDQvRFREL3N2ZzEwLmR0ZCI+CjxzdmcgdmVyc2lvbj0iMS4wIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiB3aWR0aD0iMTUwIiB2aWV3Qm94PSIwIDAgOTAwLjAwMDAwMCAyMTAuMDAwMDAwIgogcHJlc2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgbWVldCI+CjxtZXRhZGF0YT4KQ3JlYXRlZCBieSBwb3RyYWNlIDEuMTAsIHdyaXR0ZW4gYnkgUGV0ZXIgU2VsaW5nZXIgMjAwMS0yMDExCjwvbWV0YWRhdGE+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMDAwMDAwLDIxMC4wMDAwMDApIHNjYWxlKDAuMTAwMDAwLC0wLjEwMDAwMCkiCmZpbGw9IiM1ZjVlNWUiIHN0cm9rZT0ibm9uZSI+CjxwYXRoIGQ9Ik02NzAwIDIwODYgYzAgLTE2IDE5IC0yNSAzOCAtMTkgMjIgOCAxMyAzMyAtMTMgMzMgLTE1IDAgLTI1IC02IC0yNQotMTR6Ii8+CjxwYXRoIGQ9Ik02NzkwIDIwODYgYzAgLTcgNyAtMTkgMTYgLTI3IDEzIC0xMCAxNyAtMTAgMjUgMiAxNSAyNSAxMCAzOSAtMTYKMzkgLTE1IDAgLTI1IC02IC0yNSAtMTR6Ii8+CjxwYXRoIGQ9Ik02ODYyIDIwODggYzQgLTEwIDk5IC0xNCA0MjEgLTE2IDM2NyAtMiA0MTcgMCA0MTcgMTMgMCAxMyAtNTIgMTUKLTQyMSAxNSAtMzMyIDAgLTQyMCAtMyAtNDE3IC0xMnoiLz4KPHBhdGggZD0iTTg2MzAgMjA4NiBjMCAtMTYgMjcgLTI5IDQxIC0yMCAxOSAxMSA5IDM0IC0xNiAzNCAtMTUgMCAtMjUgLTYgLTI1Ci0xNHoiLz4KPHBhdGggZD0iTTg3NDUgMjA5MCBjLTYgLTEwIDYgLTE4IDM1IC0yMSAyOSAtMyA0MCAxIDQwIDE2IDAgMTcgLTY1IDIyIC03NSA1eiIvPgo8cGF0aCBkPSJNMTg0NSAyMDQ5IGMtNCAtNiAtNCAtMTMgLTEgLTE2IDggLTggMzYgNSAzNiAxNyAwIDEzIC0yNyAxMyAtMzUgLTF6Ii8+CjxwYXRoIGQ9Ik02NTQzIDIwNDggYzIgLTcgMTIgLTEzIDIyIC0xMyAxMCAwIDIwIDYgMjMgMTMgMiA3IC02IDEyIC0yMyAxMgotMTcgMCAtMjUgLTUgLTIyIC0xMnoiLz4KPHBhdGggZD0iTTg5NjAgMTk1NCBjMCAtMTMgMjEgLTQ0IDMwIC00NCA2IDAgMTAgMTEgMTAgMjUgMCAxOCAtNSAyNSAtMjAgMjUKLTExIDAgLTIwIC0zIC0yMCAtNnoiLz4KPHBhdGggZD0iTTY2MjAgMTkyNiBjMCAtOCA2IC0yMSAxNCAtMjggOCAtOCAyNSAtMzcgMzkgLTY0IDE0IC0yNyAzNyAtNjAgNTIKLTc0IGwyNiAtMjUgLTExIDMwIGMtMjQgNjUgLTQ0IDEwNSAtNTIgMTA1IC01IDAgLTE2IDE2IC0yNCAzNSAtMTQgMzUgLTQ0IDQ4Ci00NCAyMXoiLz4KPHBhdGggZD0iTTg4MDcgMTkzMyBjLTQgLTMgLTcgLTEyIC03IC0yMCAwIC03IC0xOCAtMzkgLTQwIC03MCAtMjIgLTMyIC00MAotNjIgLTQwIC02NyAwIC00IC0xMSAtMjEgLTI1IC0zOCAtMTQgLTE2IC0yNSAtMzkgLTI1IC01MCAwIC0xMSAtMTMgLTM3IC0yOQotNTcgLTI4IC0zNiAtMzcgLTUyIC04NiAtMTQ4IC0xNCAtMjggLTI5IC01MyAtMzMgLTU1IC0xMCAtNCAtNDIgLTY0IC00MiAtNzkKMCAtNiAtMTYgLTMxIC0zNSAtNTUgLTE5IC0yMyAtMzUgLTQ5IC0zNSAtNTYgMCAtOCAtMTEgLTI5IC0yNSAtNDggLTE0IC0xOQotMjUgLTM3IC0yNSAtNDEgMCAtMyAtMzEgLTU4IC03MCAtMTIwIC0zOCAtNjMgLTc5IC0xMzUgLTkxIC0xNjEgLTEyIC0yNyAtMjUKLTQ4IC0yOSAtNDggLTQgMCAtMTcgLTIzIC0zMCAtNTEgLTEyIC0yOSAtMzMgLTYzIC00NiAtNzggLTEzIC0xNCAtMjQgLTMzCi0yNCAtNDEgMCAtOSAtOSAtMjMgLTIwIC0zMyAtMTEgLTkgLTIwIC0yMyAtMjAgLTMwIDAgLTggLTExIC0zNCAtMjUgLTU4IC0xMwotMjQgLTI5IC01NSAtMzUgLTY4IC02IC0xMyAtMjIgLTM3IC0zNSAtNTMgLTE0IC0xNiAtMjUgLTM4IC0yNSAtNDggMCAtOSAtNwotMjMgLTE1IC0zMCAtMjUgLTIxIC02NCAtOTkgLTUzIC0xMDYgMTEgLTcgNTQgNDAgNjQgNzEgNCAxMSAxNyAzNCAzMCA1MSAxMwoxNyAyNCAzNCAyNCAzOCAwIDQgOSAxOSAyMCAzMyAxMSAxNCAyMCAzMiAyMCA0MCAwIDggMTYgMzkgMzUgNjkgMTkgMzAgMzUgNjMKMzUgNzMgMCAxMCA3IDIyIDE1IDI1IDkgMyAyMiAyMCAzMCAzOCA3IDE4IDI1IDQ4IDM5IDY3IDE0IDE5IDI2IDQwIDI2IDQ3IDAKNyAxMSAyNSAyNCA0MSAyMyAyNyA2NiAxMTMgNjYgMTMxIDAgNSA3IDE1IDE1IDIyIDE4IDE1IDc1IDExNiA3NSAxMzMgMCA4IDkKMjIgMjAgMzIgMjIgMjAgMTAwIDE1MCAxMDAgMTY4IDEgNyAxNCAyOCAzMCA0NyAxNyAxOSAzMCA0MCAzMCA0OCAwIDcgMTEgMjgKMjYgNDcgMTQgMTggNDMgNzAgNjUgMTE2IDIyIDQ1IDUxIDk1IDY0IDExMSAxNCAxNiAyNSAzNiAyNSA0NCAwIDkgMTEgMzAgMjUKNDggMTQgMTggMjUgMzYgMjUgNDAgMCAzIDE2IDI5IDM2IDU3IDE5IDI4IDMzIDU3IDMwIDY1IC02IDE1IC0xOCAxOCAtMjkgN3oiLz4KPHBhdGggZD0iTTE3MjggMTgzMSBjLTkgLTExIC0yNSAtNDAgLTM3IC02NSAtMTEgLTI2IC0yNyAtNTMgLTM2IC02MiAtOCAtOAotMTUgLTI0IC0xNSAtMzUgMCAtMTAgLTQgLTE5IC05IC0xOSAtNSAwIC0xMyAtMTAgLTE3IC0yMiAtOCAtMjYgLTcwIC0xMjQKLTg0IC0xMzMgLTUgLTMgLTEwIC0xNyAtMTAgLTMwIDAgLTEyIC02IC0yNSAtMTQgLTI4IC03IC0zIC0yOCAtMzYgLTQ3IC03NAotMTggLTM3IC0zNiAtNjkgLTQxIC03MSAtMTIgLTUgLTEwIC00MiAyIC00MiA2IDAgMTAgNyAxMCAxNSAwIDE2IDI1IDYwIDQ3CjgzIDcgNyAxMyAxOCAxMyAyNCAwIDUgMTIgMjkgMjggNTIgMTUgMjIgNDIgNzEgNjAgMTA5IDE4IDM3IDM3IDY3IDQyIDY3IDQgMAoxMyAxMiAxOSAyOCAxNyA0MyA2MyAxMTYgNzcgMTI1IDggNCAxNCAxNiAxNCAyNSAwIDkgNyAyNiAxNSAzNiAyOCAzNiAxMiA1MQotMTcgMTd6Ii8+CjxwYXRoIGQ9Ik02Mzc3IDE3NjggYy0xMCAtMTEgLTE3IC0yNyAtMTUgLTM2IDMgLTEyIDkgLTggMjIgMTYgMjEgNDAgMTggNDYKLTcgMjB6Ii8+CjxwYXRoIGQ9Ik0yNTU0IDE3MTQgYy02MCAtMzcgLTEzMSAtNzggLTE1NyAtOTMgLTc1IC00MSAtODQgLTQ2IC05OCAtNTggLTgKLTYgLTQ1IC0yNyAtODQgLTQ4IC0zOCAtMjEgLTc2IC00NCAtODQgLTUxIC0xMiAtMTEgLTE0IC03MCAtMTQgLTMzNCBsMSAtMzIyCjgyIC00OSBjNDQgLTI3IDgzIC00OSA4NiAtNDkgMiAwIDIzIC0xMiA0NyAtMjcgMjMgLTE1IDYyIC0zOCA4NyAtNTIgMjUgLTEzCjcyIC00MSAxMDQgLTYzIDk2IC02NCA5MSAtNzggOTEgMjcyIDAgMTY4IC0zIDMxMyAtOCAzMjMgLTQgOSAtMzEgMjkgLTYwIDQzCi0yOSAxNCAtNjYgMzcgLTg0IDUwIC0xNyAxMyAtMzYgMjQgLTQxIDI0IC01IDAgLTE1IDcgLTIyIDE2IC04IDggLTI1IDE0IC0zOQoxMiAtMjUgLTMgLTI2IC02IC0yMyAtNTMgNCAtNjAgMTcgLTc1IDEwMyAtMTE5IGw2NCAtMzMgMyAtMTk2IGMyIC0xNDMgLTEKLTE5NyAtOSAtMTk3IC02IDAgLTM3IDE3IC02OCAzOCAtMzEgMjEgLTg5IDU3IC0xMjggODEgLTQwIDIzIC03MyA0NyAtNzMgNTQKMCA3IC0xIDEyNCAtMSAyNjEgLTEgMjMwIDEgMjUwIDE3IDI2MCA0NyAyOCAxMzMgNzcgMTY5IDk3IDY1IDM1IDIwOSAxMjMgMjIzCjEzNiAxOSAxOCA0NSAxNiA3MyAtNSAxMyAtMTAgMzEgLTIyIDM5IC0yNSA4IC00IDIyIC0xMSAzMCAtMTcgOCAtNSA2MiAtMzcKMTIwIC03MCA1OCAtMzMgMTEyIC02NSAxMjAgLTcwIDggLTYgMjIgLTEzIDMwIC0xNyA4IC0zIDI3IC0xNSA0MyAtMjUgbDI3Ci0xOSAwIC0yNTIgYzAgLTEzOSAtNCAtMjU3IC04IC0yNjMgLTQgLTcgLTI1IC0yMiAtNDcgLTM0IC04MyAtNDUgLTEzNCAtNzYKLTE1MiAtOTEgLTI3IC0yNCAtNjQgLTQyIC03MSAtMzQgLTQgNCAtNSA5MSAtNCAxOTMgNCAxOTYgMTAgMjIyIDUyIDIyMiAxMCAwCjIzIDcgMzAgMTUgNyA4IDE4IDE1IDI1IDE1IDcgMCAyNCA5IDM5IDIxIDI0IDE5IDI3IDI3IDI0IDczIC0zIDQ0IC02IDUxIC0yNQo1NCAtMTQgMiAtNDAgLTEwIC02NiAtMzAgLTI0IC0xOCAtNzMgLTQ5IC0xMTAgLTY4IC0zNyAtMTkgLTY5IC00MCAtNzEgLTQ2Ci0zIC03IC02IC0xNTEgLTcgLTMyMCBsLTIgLTMwOSAyMSAtMyBjMTMgLTIgMzggOSA2MCAyNiAyMCAxNiA0NCAzMiA1MiAzNSA4CjQgMjkgMTYgNDUgMjcgMTcgMTEgMzcgMjMgNDUgMjcgOCA0IDU4IDMyIDExMSA2MiA1MiAzMSAxMTIgNjUgMTMyIDc1IGwzNyAxOQotMiAzMzEgLTMgMzMxIC0zMCAxNSBjLTI2IDEzIC0xMDkgNjEgLTIyMSAxMjcgLTE3IDEwIC02MiAzNSAtMTAwIDU3IC0zOCAyMQotODcgNTAgLTEwOSA2NSAtNDkgMzIgLTg1IDUxIC05NCA1MSAtNCAwIC01NyAtMzAgLTExNyAtNjZ6Ii8+CjxwYXRoIGQ9Ik00Mjc3IDE1ODQgYy0xMTcgLTM2IC0xODkgLTE3OSAtMTQ0IC0yODcgNjEgLTE0MyAyNDkgLTE4OSAzNjAgLTg4CjEyNyAxMTYgODEgMzI2IC04MyAzNzUgLTY0IDE5IC03MSAxOSAtMTMzIDB6IG0xMzQgLTk3IGM0NyAtMzEgNjEgLTYyIDU2Ci0xMjUgLTMgLTQ0IC05IC01OSAtMzYgLTg1IC0yOCAtMjkgLTM3IC0zMiAtODcgLTMxIC01MiAwIC01OSAzIC05MCAzNyAtMjkKMzIgLTM0IDQ0IC0zNCA4NyAwIDExMSAxMDQgMTc1IDE5MSAxMTd6Ii8+CjxwYXRoIGQ9Ik03MjAwIDE1ODggYy01NiAtMTMgLTExNSAtNTggLTE0MCAtMTA5IC0yNyAtNTIgLTI3IC0xNTYgLTEgLTIwNyA2OQotMTM1IDI1NiAtMTU4IDM2MyAtNDUgMTA0IDEwOSA1NyAyOTggLTg3IDM1MiAtNjEgMjMgLTY5IDI0IC0xMzUgOXogbTExMCAtOTMKYzQ5IC0yNSA3MCAtNjIgNzAgLTEyMSAwIC00MiAtNSAtNTkgLTI2IC04NCAtNTcgLTY3IC0xNDAgLTY3IC0xOTYgMSAtMjMgMjcKLTI4IDQzIC0yOCA4NCAwIDU3IDE2IDg3IDY0IDExNiAzNyAyMyA3NyAyNCAxMTYgNHoiLz4KPHBhdGggZD0iTTM3NDIgMTU3NiBjLTQgLTYgLTUgLTEwMyAtMiAtMjE2IGw1IC0yMDUgMzkgLTMgYzI0IC0yIDQyIDIgNDcgMTAKNSA3IDYgNDUgMyA4NCAtOCA5MSAtMSA5NyAxMTEgODMgNDcgLTYgODIgLTYgODcgLTEgNSA1IDggMjUgNiA0MyBsLTMgMzQKLTEwMCAwIC0xMDAgMCAwIDUwIDAgNTAgMTE1IDAgMTE1IDAgMCA0MCAwIDQwIC0xNTggMSBjLTEwMyAxIC0xNjAgLTMgLTE2NQotMTB6Ii8+CjxwYXRoIGQ9Ik00NjQ0IDE1NzYgYy0zIC04IC00IC03NCAtMSAtMTQ4IDUgLTE1OCAxOCAtMjAxIDczIC0yNDAgMzQgLTI0IDQ5Ci0yNyAxMTMgLTI4IDkyIDAgMTMwIDIwIDE2MyA4OCAyMSA0MyAyMyA2MSAyMyAxOTIgbDAgMTQ1IC01MCAwIC01MCAwIDQgLTE0MQpjMiAtODkgLTEgLTE0OCAtNyAtMTYxIC0yNyAtNTAgLTEyNiAtNTQgLTE1NyAtNyAtMTMgMjEgLTE2IDQ5IC0xNCAxNTggMSA3MwotMSAxMzggLTUgMTQ0IC0xMSAxNyAtODUgMTUgLTkyIC0yeiIvPgo8cGF0aCBkPSJNNTExOCAxNTgzIGMtMiAtNSAtMyAtMTAyIC0zIC0yMTggbDAgLTIxMCAyNyAtMyBjMTUgLTIgMzYgMiA0OCA4CjE5IDEwIDIxIDE3IDE1IDgzIC00IDQwIC0xMSA5MiAtMTYgMTE2IC0xOCA4NCAyNiA4MSA4MyAtNyAxMDAgLTE1MiAxMjkgLTE4NwoxNjAgLTE5NSAxOCAtNSAzNSAtNCA0MSAyIDYgNiAxMCA5NSAxMSAyMTggbDEgMjA4IC00OSAzIC00OSAzIDcgLTExOCBjNCAtNzAKMiAtMTI0IC0zIC0xMzMgLTEyIC0xOCAtNCAtMjggLTEwMCAxMTUgLTQ1IDY2IC04OSAxMjMgLTk5IDEyNyAtMjMgOSAtNzAgMTAKLTc0IDF6Ii8+CjxwYXRoIGQ9Ik01NTk0IDE1NzkgYy03IC0xMSAtNiAtNDEwIDEgLTQxNyAyIC0zIDQ5IC00IDEwNSAtMyAxMjAgMiAxNjggMTkKMjIyIDc5IDQ4IDUzIDY2IDEzMiA0NiAxOTkgLTE0IDQ3IC02MyAxMDUgLTExMiAxMzAgLTM2IDE5IC0yNTEgMjkgLTI2MiAxMnoKbTIwMyAtODIgYzUzIC0yMCA3OCAtNjIgNzggLTEzMSAtMSAtNTQgLTMgLTYxIC0zMyAtODYgLTM1IC0yOSAtMTM2IC01MCAtMTU1Ci0zMSAtMTAgMTAgLTEzIDIzNCAtMiAyNTAgOCAxNCA3MSAxMyAxMTIgLTJ6Ii8+CjxwYXRoIGQ9Ik02MTYzIDE1NzMgYy0zMCAtODggLTEyMCAtMzA1IC0xNDQgLTM0NCAtMzMgLTU3IC0zNSAtNjUgLTEzIC03MyA1NAotMjEgMTA0IDkgMTA0IDYxIDAgMzEgMjggNDMgMTA1IDQzIDc5IDAgMTAwIC0xMCAxMDggLTQ4IDkgLTQ0IDMzIC02NCA3NiAtNjAKMjMgMiAzNyA5IDM5IDE4IDIgMTQgLTIwIDcxIC00NyAxMjAgLTQgOCAtMTUgMzEgLTIzIDUwIC05IDE5IC0yOSA2NCAtNDUgMTAwCi0xNyAzNiAtMzMgNzggLTM3IDk1IC0xMSA0NSAtMjQgNTUgLTczIDU1IC0zMyAwIC00NSAtNCAtNTAgLTE3eiBtOTggLTE3NgpjMTUgLTU2IDcgLTY3IC00NSAtNjcgLTU3IDAgLTYzIDE2IC0zMCA4NiAyNSA1MyAyNyA1NSA0NSAzOCAxMSAtOSAyNCAtMzUgMzAKLTU3eiIvPgo8cGF0aCBkPSJNNjQyMCAxNTc2IGMtMTUgLTE1IC0xMiAtNDIgOCAtNjYgMTcgLTIxIDIxIC0yMSA2MCAtMTAgNzEgMjIgNzQgMTUKNzAgLTE3OSBsLTMgLTE2NiA0NSAwIDQ1IDAgMSAxNjggYzAgMTAxIDQgMTcxIDEwIDE3NyA3IDcgMjUgOCA1MyAxIDMzIC03IDQ1Ci02IDU2IDYgMTggMTggMjAgNTkgMyA3MCAtMTggMTEgLTMzNyAxMCAtMzQ4IC0xeiIvPgo8cGF0aCBkPSJNNjg2NSAxNTg0IGMtNiAtMiAtMTAgLTg0IC05IC0yMTcgbDAgLTIxMiA0NyAtMyBjMjYgLTIgNDcgMSA0NyA1IDQKMTA2IDAgNDE1IC01IDQyMiAtNiAxMSAtNTkgMTQgLTgwIDV6Ii8+CjxwYXRoIGQ9Ik03NTYyIDE1NzggYy03IC05IC03IC0zMyAwIC03MyA4IC01MCA2IC0xNjYgLTUgLTMxNSAtMiAtMjkgMzUgLTQ3Cjc1IC0zNyAzNSA5IDM4IDI4IDIyIDE0MyAtOCA1NCAtMTIgMTA1IC05IDExMiAxMCAyNyAzNyA5IDgwIC01NSAxMDcgLTE1OQoxMzAgLTE4NyAxNjQgLTE5NiAxOSAtNCAzNyAtNSA0MiAwIDYgNiAxNCAzNDggMTAgNDIxIC0xIDkgLTE1IDEyIC00OCAxMCAtNTUKLTMgLTUyIDEwIC0zOSAtMTU1IDcgLTg2IDYgLTkzIC0xMSAtOTMgLTExIDAgLTMyIDIxIC01MyA1MyAtMTggMjggLTU4IDg1Ci04NyAxMjUgLTUxIDY4IC01NiA3MiAtOTIgNzIgLTIxIDAgLTQzIC02IC00OSAtMTJ6Ii8+CjxwYXRoIGQ9Ik0wIDEyNDEgYzAgLTE3IDIgLTMxIDQgLTMxIDggMCAxMyA1MSA1IDU2IC01IDMgLTkgLTkgLTkgLTI1eiIvPgo8cGF0aCBkPSJNMTM3NyAxMjIzIGMtMTAgLTEwIC04IC01MyAyIC01MyAxMCAwIDIxIDI0IDIxIDQ2IDAgMTUgLTEyIDE5IC0yMwo3eiIvPgo8cGF0aCBkPSJNNTUgMTEzMyBjOCAtMTYgMTkgLTM1IDI0IC00MyA1IC04IDE5IC0zNiAzMSAtNjIgMTIgLTI2IDMwIC01OCA0MQotNzEgMTAgLTE0IDI4IC00NSAzOSAtNjggMTEgLTI0IDM2IC03MSA1NSAtMTA0IDE5IC0zMyA0MSAtNzMgNDkgLTkwIDggLTE2CjIzIC00MSAzNCAtNTUgMTAgLTE0IDM2IC01NiA1NyAtOTUgMjAgLTM4IDQzIC03NCA1MSAtODAgNyAtNSAyMCAtMzAgMjkgLTU0CjggLTI1IDI3IC01OSA0MCAtNzcgMTQgLTE4IDI1IC0zNyAyNSAtNDIgMCAtNSAxMyAtMjggMzAgLTUwIDE2IC0yMyAzMCAtNDcKMzAgLTU0IDAgLTcgMTQgLTI5IDMwIC00OCAyNCAtMjkgMjkgLTMyIDI5IC0xNSAwIDExIC0xMSAzOCAtMjQgNjAgLTEzIDIyCi0zNiA2MiAtNTEgOTAgLTE0IDI3IC00NiA3OSAtNzAgMTE2IC0yNCAzNiAtNDQgNzEgLTQ0IDc2IDAgMTQgLTU5IDEyNCAtNzcKMTQ1IC0xNyAxOSAtMzggNTYgLTgyIDE0NiAtMTcgMzQgLTQwIDY4IC01MSA3NCAtMTEgNyAtMjAgMjIgLTIwIDMzIDAgMTEgLTE0CjQwIC0zMCA2NSAtMTYgMjUgLTMwIDUwIC0zMCA1NyAwIDYgLTE4IDM0IC00MSA2MyAtMjIgMjggLTQ1IDY1IC01MSA4MSAtNSAxNgotMTYgMjkgLTI0IDI5IC0xMiAwIC0xMiAtNCAxIC0yN3oiLz4KPHBhdGggZD0iTTEzMzUgMTEzNyBjLTEwIC0xNSAtMTYgLTMwIC0xMyAtMzIgOCAtOSA0MCAzMyAzNiA0NyAtMyA4IC0xMSAyCi0yMyAtMTV6Ii8+CjxwYXRoIGQ9Ik0xMjU0IDEwMDYgYy04IC0yMiAzIC0zMyAxOCAtMTggOSA5IDkgMTUgMCAyNCAtOSA5IC0xMyA3IC0xOCAtNnoiLz4KPHBhdGggZD0iTTcxNjAgMTAwMSBjMCAtNSA3IC0xNCAxNSAtMjEgOCAtNyAxNSAtMTggMTUgLTI0IDEgLTYgOSAtMjkgMjAgLTUxCjExIC0yMiAxOSAtNDYgMjAgLTUyIDAgLTcgNCAtMTMgOSAtMTMgNSAwIDE0IC0xNSAyMSAtMzQgNiAtMTggMjAgLTQyIDMwIC01MQoxMSAtMTAgMjAgLTI0IDIwIC0zMSAwIC0xNSA1MSAtOTQgNjEgLTk0IDIwIDAgMTIgMzEgLTIzIDg2IC0yMSAzNCAtMzggNjYKLTM4IDcxIDAgNiAtMTEgMjIgLTI1IDM3IC0xNCAxNSAtMjUgMzMgLTI1IDQwIDAgOCAtNyAxOSAtMTYgMjYgLTggOCAtMjIgMjcKLTMwIDQ0IC0zMCA2MSAtMzkgNzYgLTQ2IDc2IC01IDAgLTggLTQgLTggLTl6Ii8+CjxwYXRoIGQ9Ik02MzM1IDk2MCBjLTE5IC0yMSAtMTMgLTQyIDcgLTIyIDIxIDIxIDg4IDE1IDEwOSAtMTAgMjMgLTI5IDI3Ci0xMDggNCAtMTA4IC0xMSAwIC0xNSAxMiAtMTUgNTAgMCA1NSA2IDUwIC03NyA1NCAtMTUgMSAtMTcgLTcgLTE1IC00OSA0IC01NwoxMyAtNzIgMzEgLTUxIDExIDE0IDE2IDE0IDM3IC0xIDEzIC04IDI0IC0yNCAyNCAtMzQgMCAtMjQgMjIgLTI0IDQzIC0xIDEyCjEzIDE3IDM2IDE3IDczIC0xIDQ2IC01IDU5IC0zMCA4NyAtMjUgMjcgLTM3IDMyIC03MyAzMiAtMzEgMCAtNDkgLTYgLTYyIC0yMHoiLz4KPHBhdGggZD0iTTM3MzkgOTU4IGMwIC0yIC0zIC04NSAtNiAtMTg2IGwtNCAtMTgzIDMzIDMgMzMgMyAtMyA4NSBjLTEgNDcgLTUKMTAwIC04IDExOCAtOSA1NiAyNiA0MCA3MSAtMzMgNDEgLTY2IDY3IC04MCA4NiAtNDUgMzcgNzEgODMgMTM4IDkyIDEzMyA2IC0zCjcgLTUyIDIgLTEzNCBsLTcgLTEyOSAzMSAwIDMwIDAgLTIgMTgwIGMtMiAxNDMgLTUgMTgxIC0xNiAxODUgLTI3IDEwIC00NiAtNgotODYgLTcxIC02NCAtMTA1IC02OSAtMTExIC05MCAtOTQgLTEwIDggLTIzIDI2IC0yOSA0MCAtMTQgMzIgLTY4IDExMyAtODEKMTIyIC05IDcgLTQ0IDExIC00NiA2eiIvPgo8cGF0aCBkPSJNNDE4MSA5NDYgYy04IC05IC0xMSAtNjYgLTkgLTE4MiBsMyAtMTY5IDEyMCAtNiBjNjYgLTMgMTI4IC0xIDEzOAo0IDE3IDggMTcgMTEgNCAzMCAtMTQgMjAgLTIyIDIyIC0xMTEgMTkgLTkzIC0yIC05NiAtMiAtMTAyIDIyIC0zIDEzIC00IDM3Ci0yIDUyIGwzIDI5IDg1IDAgYzkyIDAgMTEwIDYgMTEwIDM1IDAgMTcgLTkgMjAgLTk3IDIyIGwtOTggMyAtMyAyOSBjLTIgMTUKLTEgMzkgMyA1MyA2IDI0IDcgMjUgMTAwIDIxIDk4IC0zIDEyMyA1IDExMiAzNiAtOSAyMiAtMjM4IDI0IC0yNTYgMnoiLz4KPHBhdGggZD0iTTQ1MjIgOTUyIGMtOSAtNyAtMTIgLTUwIC0xMCAtMTgzIGwzIC0xNzQgODQgLTMgYzEwNiAtNCAxNTggMTcgMTk4CjgwIDIyIDM1IDI3IDU1IDI3IDEwMyAwIDExOSAtNzcgMTg1IC0yMTUgMTg1IC00MSAwIC04MCAtNCAtODcgLTh6IG0xNTcgLTU3CmM1MSAtMTggNjYgLTMyIDg2IC04MiAxNSAtMzcgMTQgLTQzIC0zIC04NCAtMTEgLTI0IC0yNiAtNTAgLTM1IC01NyAtMjMgLTIwCi0xMzYgLTM1IC0xNTMgLTIxIC0xOCAxNSAtMjAgMjI5IC0yIDI0NyAxNiAxNiA1NyAxNSAxMDcgLTN6Ii8+CjxwYXRoIGQ9Ik00OTE1IDk1MSBjLTYgLTYgLTkgLTg0IC03IC0xODUgbDMgLTE3NiAyOSAwIGMxNyAwIDMwIDUgMzAgMTAgNCA4NQowIDM0MiAtNSAzNTAgLTggMTMgLTM4IDEzIC01MCAxeiIvPgo8cGF0aCBkPSJNNTExMSA5MzAgYy00OCAtMzUgLTgxIC0xMDAgLTgxIC0xNTggMCAtMzYgMjYgLTEwMSA1MiAtMTMzIDIzIC0yOQo5MSAtNTkgMTMyIC01OSA2NyAwIDE2MCA1OSAxNDEgOTAgLTggMTIgLTU1IDEzIC01NSAyIDAgLTUgLTE4IC0xNiAtNDAgLTI1Ci0zNiAtMTQgLTQ1IC0xNCAtODMgLTEgLTU0IDE5IC04MCA1NSAtODQgMTE4IC01IDYxIDEwIDkyIDU2IDEyMyA0MiAyOSA3OCAyOQoxMjkgMiA0NyAtMjUgNzUgLTIwIDcwIDEzIC01IDM0IC02MSA1OCAtMTM0IDU4IC01MiAwIC02NyAtNCAtMTAzIC0zMHoiLz4KPHBhdGggZD0iTTU0MTkgOTQ4IGMwIC0xMyAwIC0zMzYgMSAtMzUwIDAgLTUgMTQgLTggMzAgLTggbDMwIDAgLTIgMTgzIC0zCjE4MiAtMjcgMyBjLTE4IDIgLTI4IC0xIC0yOSAtMTB6Ii8+CjxwYXRoIGQ9Ik01NTcwIDk1MyBjMCAtNSAtMSAtODYgLTMgLTE4MCAtMiAtOTUgMSAtMTc3IDYgLTE4MiA1IC01IDE4IC02IDI5Ci0zIDE5IDUgMjAgMTAgMTMgMTMzIC00IDc3IC00IDEyOSAyIDEyOSAyMSAwIDU0IC00MCAxODIgLTIyNSAxNSAtMjIgMzMgLTM1CjQ2IC0zNSAyMiAwIDIyIDMgMjggMTczIDUgMTgzIDEgMjAyIC00MCAxOTEgLTIxIC02IC0yMiAtOSAtMTYgLTEyNSA2IC0xMjggMQotMTQxIC0zNiAtOTEgLTEyIDE1IC00MCA1MiAtNjQgODIgLTIzIDMwIC01MyA3MSAtNjcgOTAgLTEzIDE5IC0yOSAzOCAtMzUgNDIKLTEzIDEwIC00NSAxMCAtNDUgMXoiLz4KPHBhdGggZD0iTTU5NzggOTUzIGMtMTYgLTQgLTE4IC0yMSAtMTggLTE4MyBsMCAtMTc4IDEyOCAtNCBjMTQxIC02IDE2NCAxCjE0MiA0MiAtMTIgMjIgLTE2IDIyIC0xMDIgMTYgLTEwMiAtOCAtMTE4IC0xIC0xMTggNDggMCA1NSA5IDU5IDk4IDUxIDc2IC03CjgxIC02IDkyIDE1IDE5IDM1IC0xIDQzIC05NyA0NCBsLTg4IDEgLTMgMzggYy01IDYxIDcgNjggMTE1IDY1IDc0IC0yIDk2IDAKMTAzIDEyIDE5IDMxIC04IDQwIC0xMjQgMzkgLTYxIC0xIC0xMTkgLTMgLTEyOCAtNnoiLz4KPHBhdGggZD0iTTEyMDAgOTEwIGMwIC0xMSA1IC0yMCAxMCAtMjAgNiAwIDEwIDkgMTAgMjAgMCAxMSAtNCAyMCAtMTAgMjAgLTUKMCAtMTAgLTkgLTEwIC0yMHoiLz4KPHBhdGggZD0iTTYyNzAgODY2IGMwIC0xNCA1IC0yNiAxMCAtMjYgNiAwIDEwIC03IDEwIC0xNSAwIC0xNyAzNSAtNTUgNTAgLTU1CjYgMCAxMCAtNyAxMCAtMTYgMCAtMTEgOSAtMTQgMzcgLTEyIDQ4IDQgNTcgMjggMTEgMjggLTI3IDAgLTQxIDggLTY0IDM1IC0xNgoxOSAtMzEgNDUgLTM0IDU3IC04IDMyIC0zMCAzNSAtMzAgNHoiLz4KPHBhdGggZD0iTTExMzAgNzg3IGMtMTQgLTI5IC03IC00OCAxMSAtMzAgNiA2IDkgMjEgNyAzNCBsLTQgMjQgLTE0IC0yOHoiLz4KPHBhdGggZD0iTTczOTAgNTk1IGMwIC0xNCA5IC0zNCAyMCAtNDUgMTEgLTExIDIwIC0yOSAyMCAtMzkgMCAtMTEgNiAtMjYgMTMKLTMzIDE5IC0yMSA2NCAtOTAgNzggLTEyMCA3IC0xNiAxNiAtMjggMjAgLTI4IDQgMCAxMCAtMTEgMTMgLTI1IDMgLTEzIDE3Ci0zNSAzMSAtNDkgMTQgLTE0IDI1IC0zMiAyNSAtNDAgMCAtMTcgNTAgLTk2IDYyIC05NiAxMiAwIDEwIDcgLTE3IDU4IC0xNCAyNgotMjUgNTIgLTI1IDU4IDAgNyAtNyAxNCAtMTUgMTggLTggMyAtMTUgMTQgLTE1IDI0IDAgMTAgLTExIDMzIC0yNSA1MiAtMTQgMTkKLTI1IDM5IC0yNSA0NSAwIDcgLTkgMjAgLTIwIDMwIC0xMSAxMCAtMjAgMjYgLTIwIDM2IDAgMTAgLTggMjMgLTE3IDI4IC0yMAoxMSAtNTkgODIgLTY4IDEyNCAtNyAzNCAtMzUgMzYgLTM1IDJ6Ii8+CjxwYXRoIGQ9Ik05NjcgNTAzIGMtMTIgLTExIC04IC0yMyA4IC0yMyA4IDAgMTUgNyAxNSAxNSAwIDE2IC0xMiAyMCAtMjMgOHoiLz4KPHBhdGggZD0iTTkyNiA0MzMgYy00IC0xMCAtMTcgLTM2IC0zMCAtNTggLTI4IC00NiAtMzUgLTgyIC0xMCAtNTAgOSAxMSAyNQo0MCAzNiA2NSAxMiAyNSAyMyA0OCAyNSA1MyAyIDQgMCA3IC01IDcgLTUgMCAtMTMgLTggLTE2IC0xN3oiLz4KPHBhdGggZD0iTTU2MDUgNDA5IGMtNCAtMTEgLTQgLTIzIDAgLTI3IDcgLTcgMjUgMTcgMjUgMzYgMCAyMCAtMTggMTQgLTI1IC05eiIvPgo8cGF0aCBkPSJNNTU2MiAzNDEgYy04IC01IC0xMiAtMTkgLTEwIC0zMiBsMyAtMjQgMTMgMjMgYzE2IDI4IDEyIDQ1IC02IDMzeiIvPgo8cGF0aCBkPSJNNzk4IDIwMyBjLTIwIC0yMyAtMzIgLTYzIC0xOSAtNjMgMTEgMCA0NiA2OCAzOSA3NSAtMyAzIC0xMiAtMyAtMjAKLTEyeiIvPgo8cGF0aCBkPSJNNTQ2NSAxODkgYy0xMCAtMTUgMyAtMjUgMTYgLTEyIDcgNyA3IDEzIDEgMTcgLTYgMyAtMTQgMSAtMTcgLTV6Ii8+CjxwYXRoIGQ9Ik03ODAwIDE1OSBjLTEzIC0yNCAtNCAtNDEgMTAgLTE5IDEwIDE2IDEzIDQwIDUgNDAgLTIgMCAtOSAtOSAtMTUKLTIxeiIvPgo8cGF0aCBkPSJNNjg1IDQxIGMtNyAtMTIgMTIgLTI0IDI1IC0xNiAxMSA3IDQgMjUgLTEwIDI1IC01IDAgLTExIC00IC0xNSAtOXoiLz4KPHBhdGggZD0iTTUzOTQgMzYgYy04IC0yMiAzIC0zMyAxOCAtMTggOSA5IDkgMTUgMCAyNCAtOSA5IC0xMyA3IC0xOCAtNnoiLz4KPHBhdGggZD0iTTMwMzcgMjQgYy0xMyAtMTMgLTcgLTI0IDE0IC0yNCAxMSAwIDE5IDUgMTcgMTIgLTUgMTQgLTIyIDIxIC0zMQoxMnoiLz4KPC9nPgo8L3N2Zz4K"
 
 /***/ }),
 /* 525 */
+/***/ (function(module, exports) {
+
+	module.exports = "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiI+PGRlZnM+PHBhdGggaWQ9ImN6NTlhIiBkPSJNNjUxIDE4NXYtMTZoMTZ2MTZ6bTEtOGE3IDcgMCAxIDAgMTQgMCA3IDcgMCAwIDAtMTQgMHoiLz48cGF0aCBpZD0iY3o1OWIiIGQ9Ik02NTkgMTcwYTcgNyAwIDEgMSAwIDE0IDcgNyAwIDAgMSAwLTE0eiIvPjxwYXRoIGlkPSJjejU5ZCIgZD0iTTY2MS43NyAxNzRsLTMuNyAzLjYtMS44NC0xLjhMNjU1IDE3N2wzLjA4IDMgNC45Mi00Ljh6Ii8+PGNsaXBQYXRoIGlkPSJjejU5YyI+PHVzZSBmaWxsPSIjZmZmIiB4bGluazpocmVmPSIjY3o1OWEiLz48L2NsaXBQYXRoPjwvZGVmcz48Zz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtNjUxIC0xNjkpIj48Zz48dXNlIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMCIgc3Ryb2tlPSIjNDY0NjQ2IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIHN0cm9rZS1taXRlcmxpbWl0PSI1MCIgc3Ryb2tlLXdpZHRoPSIyIiBjbGlwLXBhdGg9InVybCgmcXVvdDsjY3o1OWMmcXVvdDspIiB4bGluazpocmVmPSIjY3o1OWIiLz48L2c+PGc+PHVzZSB4bGluazpocmVmPSIjY3o1OWQiLz48dXNlIGZpbGw9IiM0NjQ2NDYiIHhsaW5rOmhyZWY9IiNjejU5ZCIvPjwvZz48L2c+PC9nPjwvc3ZnPg=="
+
+/***/ }),
+/* 526 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -46928,7 +46976,7 @@
 
 
 /***/ }),
-/* 526 */
+/* 527 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/volodymyr/Desktop/medpoint-dev/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/volodymyr/Desktop/medpoint-dev/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -46953,7 +47001,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactCollapsible = __webpack_require__(525);
+	var _reactCollapsible = __webpack_require__(526);
 
 	var _reactCollapsible2 = _interopRequireDefault(_reactCollapsible);
 
@@ -47152,7 +47200,7 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/volodymyr/Desktop/medpoint-dev/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "one-heme.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ }),
-/* 527 */
+/* 528 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/volodymyr/Desktop/medpoint-dev/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/volodymyr/Desktop/medpoint-dev/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -47177,7 +47225,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactCollapsible = __webpack_require__(525);
+	var _reactCollapsible = __webpack_require__(526);
 
 	var _reactCollapsible2 = _interopRequireDefault(_reactCollapsible);
 
@@ -47381,7 +47429,7 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/volodymyr/Desktop/medpoint-dev/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "one.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ }),
-/* 528 */
+/* 529 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	/* REACT HOT LOADER */ if (false) { (function () { var ReactHotAPI = require("/home/volodymyr/Desktop/medpoint-dev/node_modules/react-hot-loader/node_modules/react-hot-api/modules/index.js"), RootInstanceProvider = require("/home/volodymyr/Desktop/medpoint-dev/node_modules/react-hot-loader/RootInstanceProvider.js"), ReactMount = require("react-dom/lib/ReactMount"), React = require("react"); module.makeHot = module.hot.data ? module.hot.data.makeHot : ReactHotAPI(function () { return RootInstanceProvider.getRootInstances(ReactMount); }, React); })(); } try { (function () {
@@ -47406,7 +47454,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactCollapsible = __webpack_require__(525);
+	var _reactCollapsible = __webpack_require__(526);
 
 	var _reactCollapsible2 = _interopRequireDefault(_reactCollapsible);
 
@@ -47489,7 +47537,7 @@
 	                                    _react2["default"].createElement(
 	                                        "p",
 	                                        null,
-	                                        " Подобранные методы лечения, могут бить более эффективными."
+	                                        "В рамках анализа проверяются 62 гена, ассоциированные с поддающимися лечению видами рака."
 	                                    )
 	                                )
 	                            ),
@@ -47507,7 +47555,7 @@
 	                                    _react2["default"].createElement(
 	                                        "p",
 	                                        null,
-	                                        "В рамках анализа проверяются 62 гена, ассоциированные с поддающимися лечению видами рака."
+	                                        " Подобранные методы лечения, могут бить более эффективными."
 	                                    )
 	                                )
 	                            )
@@ -47610,7 +47658,7 @@
 	/* REACT HOT LOADER */ }).call(this); } finally { if (false) { (function () { var foundReactClasses = module.hot.data && module.hot.data.foundReactClasses || false; if (module.exports && module.makeHot) { var makeExportsHot = require("/home/volodymyr/Desktop/medpoint-dev/node_modules/react-hot-loader/makeExportsHot.js"); if (makeExportsHot(module, require("react"))) { foundReactClasses = true; } var shouldAcceptModule = true && foundReactClasses; if (shouldAcceptModule) { module.hot.accept(function (err) { if (err) { console.error("Cannot apply hot update to " + "act.jsx" + ": " + err.message); } }); } } module.hot.dispose(function (data) { data.makeHot = module.makeHot; data.foundReactClasses = foundReactClasses; }); })(); } }
 
 /***/ }),
-/* 529 */
+/* 530 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -47621,9 +47669,9 @@
 
 	var _redux = __webpack_require__(413);
 
-	var _reactRouterRedux = __webpack_require__(530);
+	var _reactRouterRedux = __webpack_require__(531);
 
-	var _smartTestReduserJs = __webpack_require__(535);
+	var _smartTestReduserJs = __webpack_require__(536);
 
 	exports["default"] = (0, _redux.combineReducers)({
 	    // routing: routerReducer,
@@ -47632,7 +47680,7 @@
 	module.exports = exports["default"];
 
 /***/ }),
-/* 530 */
+/* 531 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -47642,7 +47690,7 @@
 	});
 	exports.routerMiddleware = exports.routerActions = exports.goForward = exports.goBack = exports.go = exports.replace = exports.push = exports.CALL_HISTORY_METHOD = exports.routerReducer = exports.LOCATION_CHANGE = exports.syncHistoryWithStore = undefined;
 
-	var _reducer = __webpack_require__(531);
+	var _reducer = __webpack_require__(532);
 
 	Object.defineProperty(exports, 'LOCATION_CHANGE', {
 	  enumerable: true,
@@ -47657,7 +47705,7 @@
 	  }
 	});
 
-	var _actions = __webpack_require__(532);
+	var _actions = __webpack_require__(533);
 
 	Object.defineProperty(exports, 'CALL_HISTORY_METHOD', {
 	  enumerable: true,
@@ -47702,11 +47750,11 @@
 	  }
 	});
 
-	var _sync = __webpack_require__(533);
+	var _sync = __webpack_require__(534);
 
 	var _sync2 = _interopRequireDefault(_sync);
 
-	var _middleware = __webpack_require__(534);
+	var _middleware = __webpack_require__(535);
 
 	var _middleware2 = _interopRequireDefault(_middleware);
 
@@ -47716,7 +47764,7 @@
 	exports.routerMiddleware = _middleware2['default'];
 
 /***/ }),
-/* 531 */
+/* 532 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -47759,7 +47807,7 @@
 	}
 
 /***/ }),
-/* 532 */
+/* 533 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -47801,7 +47849,7 @@
 	var routerActions = exports.routerActions = { push: push, replace: replace, go: go, goBack: goBack, goForward: goForward };
 
 /***/ }),
-/* 533 */
+/* 534 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -47814,7 +47862,7 @@
 
 	exports['default'] = syncHistoryWithStore;
 
-	var _reducer = __webpack_require__(531);
+	var _reducer = __webpack_require__(532);
 
 	var defaultSelectLocationState = function defaultSelectLocationState(state) {
 	  return state.routing;
@@ -47961,7 +48009,7 @@
 	}
 
 /***/ }),
-/* 534 */
+/* 535 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -47971,7 +48019,7 @@
 	});
 	exports['default'] = routerMiddleware;
 
-	var _actions = __webpack_require__(532);
+	var _actions = __webpack_require__(533);
 
 	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
@@ -47999,7 +48047,7 @@
 	}
 
 /***/ }),
-/* 535 */
+/* 536 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -48064,7 +48112,7 @@
 	}
 
 /***/ }),
-/* 536 */
+/* 537 */
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -48092,7 +48140,7 @@
 	exports['default'] = thunk;
 
 /***/ }),
-/* 537 */
+/* 538 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
